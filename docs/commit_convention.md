@@ -1,7 +1,7 @@
 # Git Commit Convention
 
-``` bash
-<타입>(<범위>): <제목>
+``` text
+<type>(<scope>): <title>
 ```
 
 ### 타입 목록
