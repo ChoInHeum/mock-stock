@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:17
+    container_name: mockstock-db
+    environment:
+      POSTGRES_DB: mockstock
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    restart: unless-stopped # docker 시작 시 바로 실행
+
+volumes:
+  db-data:

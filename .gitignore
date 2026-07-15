@@ -3,3 +3,6 @@
 
 # claude
 .claude
+
+# Environment
+.env
