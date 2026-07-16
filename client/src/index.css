@@ -14,6 +14,7 @@
 }
 
 body {
+  background-color: oklch(97% 0 0);
   margin: 0;
 }
 
@@ -30,11 +31,20 @@ p {
 }
 
 @theme {
+  /* Font */
   --font-sans:
     "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
     system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
     "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", sans-serif;
+
+  /* Color */
+  --color-background: oklch(97% 0 0); /* Neutral-100 */
+  --color-sub-background: oklch(87% 0 0); /* Neutral-300 */
+  --color-primary: oklch(69.6% 0.17 162.48); /* Emerald-500 */
+  --color-border: oklch(87% 0 0); /* Neutral-300 */
+  --color-black-text: oklch(14.5% 0 0); /* Neutral-950 */
+  --color-white-text: oklch(98.5% 0 0); /* Neutral-50 */
 }
 
 @layer base {
@@ -66,7 +76,9 @@ p {
     @apply text-sm md:text-base;
   }
 
-  p {
-    @apply m-0;
+  p,
+  span {
+    @apply m-0 
+      text-black-text font-medium;
   }
 }

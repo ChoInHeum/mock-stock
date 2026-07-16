@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { RouterProvider } from "react-router";
 import "./index.css";
-
-/* 임시 작성 */
+import router from "./router";
 import { publicAPIClient } from "./utils/apiClient";
 
 const testBackendHandle = async () => {
@@ -12,15 +12,6 @@ const testBackendHandle = async () => {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <div>
-      <h1>Test</h1>
-
-      <button
-        className="px-4 py-2 border border-neutral-400 rounded-xl cursor-pointer"
-        onClick={testBackendHandle}
-      >
-        backend 통신 테스트
-      </button>
-    </div>
+    <RouterProvider router={router} />
   </StrictMode>,
 );
