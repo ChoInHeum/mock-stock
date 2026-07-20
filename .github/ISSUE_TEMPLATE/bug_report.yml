@@ -41,8 +41,8 @@ body:
         - client
         - server
         - db/infra
-      validations:
-        required: true
+    validations:
+      required: true
 
   - type: textarea
     id: context
