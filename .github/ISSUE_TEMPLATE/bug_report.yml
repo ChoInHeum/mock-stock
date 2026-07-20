@@ -1,0 +1,53 @@
+name: 버그 리포트
+description: 동작하지 않거나 예상과 다르게 동작하는 문제를 보고합니다.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 설명
+      description: 어떤 문제가 발생했는지 명확하게 작성해주세요.
+      placeholder: 로그인 후 새로고침하면 세션이 끊깁니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 방법
+      description: 버그를 재현하는 단계를 순서대로 작성해주세요.
+      placeholder: |
+        1. 로그인한다
+        2. 대시보드로 이동한다
+        3. 새로고침한다
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 동작
+      description: 정상적이라면 어떻게 동작해야 하나요?
+      placeholder: 로그인 상태가 유지되어야 합니다.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 영역
+      options:
+        - client
+        - server
+        - db/infra
+      validations:
+        required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 추가 정보
+      description: 에러 로그, 스크린샷 등이 있으면 첨부해주세요.
+    validations:
+      required: false
