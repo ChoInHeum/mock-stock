@@ -14,11 +14,12 @@
 }
 
 body {
-  background-color: oklch(97% 0 0);
+  background-color: oklch(0.946 0 0); /* Neutral-150 */
   margin: 0;
 }
 
 #root {
+  min-width: 320px;
   max-width: 100%;
   min-height: 100svh;
   display: flex;
@@ -39,12 +40,13 @@ p {
     "Segoe UI Symbol", sans-serif;
 
   /* Color */
-  --color-background: oklch(97% 0 0); /* Neutral-100 */
+  --color-white-background: oklch(97% 0 0); /* Neutral-100 */
   --color-sub-background: oklch(87% 0 0); /* Neutral-300 */
-  --color-primary: oklch(69.6% 0.17 162.48); /* Emerald-500 */
+  --color-primary: oklch(59.6% 0.145 163.225); /* Emerald-600 */
   --color-border: oklch(87% 0 0); /* Neutral-300 */
   --color-black-text: oklch(14.5% 0 0); /* Neutral-950 */
   --color-white-text: oklch(98.5% 0 0); /* Neutral-50 */
+  --color-gray-text: oklch(70.8% 0 0) /* Neutral-400 */;
 }
 
 @layer base {
@@ -53,7 +55,7 @@ p {
   h3,
   h4,
   h5 {
-    @apply font-bold text-gray-900 dark:text-gray-100;
+    @apply font-bold text-black-text dark:text-gray-100;
   }
 
   h1 {
@@ -79,6 +81,14 @@ p {
   p,
   span {
     @apply m-0 
-      text-black-text font-medium;
+      text-black-text font-medium break-keep;
+  }
+
+  button {
+    @apply break-keep;
+  }
+
+  * {
+    @apply outline-none;
   }
 }
